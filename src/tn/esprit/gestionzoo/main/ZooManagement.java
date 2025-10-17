@@ -2,6 +2,10 @@ package tn.esprit.gestionzoo.main;
 
 import tn.esprit.gestionzoo.entities.Animal;
 import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.Dolphin;
+import tn.esprit.gestionzoo.entities.Penguin;
+import tn.esprit.gestionzoo.entities.Terrestrial;
+
 
 import java.util.Scanner;
 
@@ -59,6 +63,12 @@ public class ZooManagement {
         zoo2.addAnimal(new Animal("oiseau", "canarii", 2, false));
         Zoo plusGrandZoo = Zoo.comparerZoos(zoo1, zoo2);
         System.out.println("le zoo le plus rempli est : " + plusGrandZoo.getName());
+
+        Dolphin d1 = new Dolphin("Mammifère", "7wita", 5, true, "", 22.01);
+        Penguin p1 = new Penguin("Oiseau", "batri9", 3, true, "Pôle Sud", 20.01);
+        Terrestrial lion = new Terrestrial("Mammifère", "Lion", 6, true, 4);
+
+
 
         scanner.close();
     }
