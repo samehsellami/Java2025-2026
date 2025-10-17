@@ -1,4 +1,4 @@
-package org.example;
+package tn.esprit.gestionzoo.entities;
 
 public class Zoo {
     public static final int MAX_CAGES = 25;
@@ -12,9 +12,24 @@ public class Zoo {
         this.city = city;
         this.nbrAnimals = 0;
     }
+    public String getName() {
+        return name;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public int getNbrAnimals() {
+        return nbrAnimals;
+    }
+
+    public boolean isZooFull() {
+        return nbrAnimals >= MAX_CAGES;
+    }
 
     public boolean addAnimal(Animal animal) {
-        if (isFull()) {
+        if (isZooFull()) {
             return false;
         }
         if (searchAnimal(animal.name) != -1) {
@@ -26,7 +41,7 @@ public class Zoo {
     }
 
     public void afficherAnimaux() {
-        System.out.println("Animaux dans le zoo " + name + " (" + city + ") :");
+        System.out.println("animaux dans le zoo " + name + " (" + city + ") :");
         for (int i = 0; i < nbrAnimals; i++) {
             System.out.println("- " + animals[i].name + " (" + animals[i].family + ")");
         }
@@ -64,11 +79,6 @@ public class Zoo {
 
     @Override
     public String toString() {
-        return "Zoo{" +
-                "nom='" + name + '\'' +
-                ", ville='" + city + '\'' +
-                ", nombre d'animaux=" + nbrAnimals +
-                ", capacité=" + MAX_CAGES +
-                '}';
+        return "Zoo{" + "nom='" + name  + ", ville='" + city  + ", nombre d'animaux=" + nbrAnimals + ", capacité=" + MAX_CAGES + '}';
     }
 }
