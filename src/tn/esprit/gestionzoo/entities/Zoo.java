@@ -1,7 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 
 public class Zoo {
-    public static final int MAX_CAGES = 25;
+    public static final int MAX_CAGES = 3; // tbadlet 3
     private Animal[] animals = new Animal[MAX_CAGES];
     private String name;
     private String city;
@@ -28,17 +28,30 @@ public class Zoo {
         return nbrAnimals >= MAX_CAGES;
     }
 
-    public boolean addAnimal(Animal animal) {
-        if (isZooFull()) {
-            return false;
-        }
-        if (searchAnimal(animal.name) != -1) {
-            return false;
-        }
+    //public void addAnimal(Animal animal) {
+        //try {if (animal == null) {
+                //throw new Exception("animal ne peut pas etre nul ");}
+            //if (nbrAnimals >= MAX_CAGES) {
+                //throw new Exception("zoo plein ");}
+            //animals[nbrAnimals] = animal;
+            //nbrAnimals++;
+            //System.out.println(animal.name + " ajoute avec succees");} catch (Exception e) {
+            //System.out.println("erreur : " + e.getMessage());}}
+
+    //public void addAnimal(Animal animal) throws ZooFullException {
+        //if (nbrAnimals >= MAX_CAGES) {throw new ZooFullException("zoo plein " + animal.name);}
+        //animals[nbrAnimals] = animal;
+    //nbrAnimals++;
+        //System.out.println(animal.name + "ajoute avec succees");}
+
+    public void addAnimal(Animal animal) throws ZooFullException, InvalidAgeException {
+        if (animal.age < 0) {
+            throw new InvalidAgeException("age invalide" + animal.name + " !");}
+        if (nbrAnimals >= MAX_CAGES) {
+            throw new ZooFullException("zoo plein " + animal.name);}
         animals[nbrAnimals] = animal;
         nbrAnimals++;
-        return true;
-    }
+        System.out.println(animal.name + " ajoute avec succees !");}
 
     public void afficherAnimaux() {
         System.out.println("animaux dans le zoo " + name + " (" + city + ") :");

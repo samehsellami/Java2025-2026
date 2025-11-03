@@ -69,7 +69,6 @@ public class ZooManagement {
         Terrestrial lion = new Terrestrial("Mammifère", "Lion", 6, true, 4);
 
 
-
         scanner.close();
     }
 }
