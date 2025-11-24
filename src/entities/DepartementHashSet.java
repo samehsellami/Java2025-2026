@@ -49,6 +49,6 @@ public class DepartementHashSet implements IDepartement<Departement>{
                 (d1,d2) -> Integer.compare(d1.getId(), d2.getId()));
 
         sorted.addAll(departements);
-        return sorted;
-    }
+        return sorted;
+}
 }

@@ -64,7 +64,7 @@ public class Departement {
     @Override
     public String toString() {
         return "Departement: ID = " + id + ", nomDep = " + nomDep + ", nbEmp = " + nbEmp;
-    }
+}
 
 }
 

@@ -81,7 +81,7 @@ public class Employe {
     @Override
     public String toString() {
         return "Employé: id: " +id + "nom: " +nom + "prenom: " +prenom + "nom_dep: " +nom_dep + "grade: " +grade;
-    }
+}
 
 
 }
